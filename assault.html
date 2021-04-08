@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+
+    <style>
+
+*{
+visibility: hidden;    
+}        
+
+body{
+        margin: 0;
+        padding: 0;
+        background-image: url('a-view-of-the-stars-on-night-sky.png'); 
+        }
+
+      
+        #error2{
+        position: relative;
+        float: left; 
+        top: 50%;
+        left: 50%; 
+        transform: translate(-50% );
+        font-size: 20px;  
+        color: white; 
+        z-index: 3;
+        display: block; 
+        visibility: visible;   
+        }
+        a{
+       -webkit-tap-highlight-color: transparent;
+  }
+
+
+        
+
+@media only screen and (min-width: 1280px) {
+
+        *{
+        visibility: visible;    
+        }
+        
+
+        body{
+        margin: 0;
+        padding: 0;
+        background-image: url('a-view-of-the-stars-on-night-sky.png');  
+        }
+
+        #backArrow{
+                position: absolute;
+                float: left; 
+                top: 20px;
+                left: 10px; 
+                width: 30px;
+                height: 40px; 
+                z-index: 4; 
+                }  
+
+        #error2{
+        position: relative;
+        float: left; 
+        top: 50%;
+        left: 50%; 
+        transform: translate(-50% );
+        font-size: 20px;  
+        color: white; 
+        z-index: 3; 
+      
+        display: none;    
+        }
+
+        #player{
+        display: none;    
+        }
+        #player2{
+        display: none;    
+        }
+
+        #heading{
+        position: relative;
+        float: left;
+        top: 0px;
+        left: 40vw;
+        width: 20vw;
+       
+        }
+        #shield{
+        position: relative;
+        float: left;
+        top: 51px;
+        left: -50px;
+        width: 70px;
+        height: 17px;
+        z-index: 3;
+        }
+        #score{
+        position: relative;
+        float: left;
+        top: 51px;
+        left: 50%;
+        width: 70px;
+        height: 17px;
+        z-index: 1;    
+        }
+
+        #gameOver{
+        position: absolute;
+       
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 1; 
+        display: none;   
+        }
+     
+        a{
+        text-decoration: none;    
+        }
+
+       
+
+        canvas{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,-50%);
+        width: 90%;
+        height: 80%;
+       background-image: url('Stars-Space1.png');
+        }
+        
+          
+        #loader { 
+            border: 12px solid #f3f3f3; 
+            border-radius: 50%; 
+            border-top: 12px solid #444444; 
+            width: 170px; 
+            height: 170px; 
+            animation: spin 1s linear infinite; 
+            z-index: 3;
+        } 
+        
+        @keyframes spin { 
+            100% { 
+                transform: rotate(360deg); 
+            } 
+        } 
+        
+        .center { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            margin: auto;
+        }   
+        
+     
+  
+
+  
+
+    }
+
+    </style>
+    
+      <div id="loader" class="center">
+    </div>
+
+    <a href="index.html"><img id="backArrow" src="back-arrow.png"/></a>
+    <p id="error2">This game has only been configured <br>to work on laptop and desktop devices. <br>
+    Please move to a different device <br>or resize your browser window. </p>
+
+   <img id="heading" src="planetAssault..png" />
+
+   <img id="shield" src="shield.png"/>
+
+   <img id="score" src="score.png"/>
+
+   
+
+   <a href="assault.html"><img id="gameOver" src="game-over.png"/></a>
+
+    <audio id="player" controls ><source src="explode.mp3" type="audio/mpeg"></audio>
+    <audio id="player2" controls ><source src="spacie.mp3" type="audio/mpeg"></audio>
+    
+    <canvas>
+
+
+    </canvas>
+    
+      <script> 
+        this.document.onreadystatechange = function() { 
+            if (document.readyState !== "complete") { 
+                document.querySelector( 
+                "body").style.visibility = "hidden"; 
+                document.querySelector( 
+                "#loader").style.visibility = "visible"; 
+            } else { 
+                document.querySelector( 
+                "#loader").style.display = "none"; 
+                document.querySelector( 
+                "body").style.visibility = "visible"; 
+            } 
+        }; 
+       
+    </script> 
+
+
+
+    <script src="game.js"></script>
+</body>
+</html>
